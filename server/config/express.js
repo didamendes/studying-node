@@ -13,7 +13,11 @@ module.exports = function () {
     app.set('port', 3000);
 
     // Set nodemailer transport for app
-
+    app.use(function (req, res, next) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        next();
+    });
 
     // Enable compression on bower_components
     app.use('/bower_components', express.static(__dirname + '/../../bower_components'));
