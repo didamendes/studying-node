@@ -28,8 +28,8 @@ module.exports = function(){
             required: true
         }, 
         categoria: {
-            type: mongoose.Schema.ObjectId,
-            ref: 'Categoria'
+            type: String,
+            required: true
         }
         
     });

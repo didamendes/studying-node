@@ -80,7 +80,7 @@ module.exports = function (app){
     };
     
     controller.update = function(req, res){
-      var id = req.body.id;
+      var id = req.body._id;
         
         Produto.findByIdAndUpdate(id, req.body).exec().then(
             function(response){
